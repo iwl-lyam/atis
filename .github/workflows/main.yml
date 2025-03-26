@@ -22,8 +22,22 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install dependencies
+      # Install system dependencies conditionally
+      - name: Install system dependencies (Linux)
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y portaudio19-dev
+        shell: bash
+
+      - name: Install system dependencies (macOS)
+        if: matrix.os == 'macos-latest'
+        run: brew install portaudio
+        shell: bash
+
+      - name: Install Python dependencies
         run: pip install -r requirements.txt pyinstaller
+        shell: bash
 
       - name: Build executable
         run: |
@@ -67,6 +81,7 @@ jobs:
           mkdir release-files
           mv artifacts/*/* release-files/
           cp audio.zip release-files/
+        shell: bash
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
