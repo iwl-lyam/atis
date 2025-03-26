@@ -1,0 +1,8 @@
+audioop-lts==0.2.1
+cffi==1.17.1
+numpy==2.2.4
+PyAudio==0.2.14
+pycparser==2.22
+pydub==0.25.1
+simpleaudio==1.0.4
+sounddevice==0.5.1
