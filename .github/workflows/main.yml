@@ -44,7 +44,7 @@ jobs:
 
       - name: Build executable
         run: |
-          pyinstaller --onefile main.py
+          pyinstaller --onefile  --target-architecture x86_64 main.py
         shell: bash
 
       - name: Rename artifact
