@@ -6,3 +6,7 @@ lib/
 __pycache__/
 pyvenv.cfg
 *.wav
+*.zip
+control.txt
+prompt.txt
+oldmain.py
