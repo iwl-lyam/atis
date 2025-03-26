@@ -44,7 +44,7 @@ jobs:
 
       - name: Build executable
         run: |
-          pyinstaller --onefile  --target-architecture x86_64 main.py
+          pyinstaller --onefile main.py
         shell: bash
 
       - name: Rename artifact
@@ -53,7 +53,7 @@ jobs:
           if [[ "$RUNNER_OS" == "Linux" ]]; then
             mv dist/main build-output/atis_gen-linux
           elif [[ "$RUNNER_OS" == "macOS" ]]; then
-            mv dist/main build-output/atis_gen-macos
+            mv dist/main build-output/atis_gen-macos-arm
           else
             mv dist/main.exe build-output/atis_gen-windows.exe
           fi
