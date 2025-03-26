@@ -43,5 +43,4 @@ Now the real deal. Clone this repository then run `pip install -r requirements.t
 
 
 
-
 _Overall this was a pretty badly slapped together project. If there are any issues (which there are several of) then please contact me (develop331) and I'll fix them, or open an issue on GitHub_
